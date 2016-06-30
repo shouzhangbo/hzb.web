@@ -1,0 +1,20 @@
+package com.my.test.util;
+
+public class HttpUtils {
+
+	public static void main(String[] args) throws Exception {
+		// TODO Auto-generated method stub
+		String url="http://localhost/newspaper/test/1.php?usr=156gs";
+		//GET的URL,参数直接加URL后
+		HttpGet httpget=new HttpGet(url);
+		//建立HttpPost对象
+		HttpResponse response=new DefaultHttpClient().execute(httpget);
+		//发送GET,并返回一个HttpResponse对象，相对于POST，省去了添加NameValuePair数组作参数
+		if(response.getStatusLine().getStatusCode()==200){//如果状态码为200,就是正常返回
+			String result=EntityUtils.toString(response.getEntity());
+			//得到返回的字符串
+			System.out.println(result);
+			//打印输出
+		}
+	}
+}
