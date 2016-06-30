@@ -70,7 +70,6 @@ INDEX VERSION 1.127+E:\softinstall\workspace\.metadata\.plugins\org.eclipse.jdt.
 552919702.index
 2353178811.index
 3462316942.index
-2454508116.index
 2283158663.index
 3609595247.index
 1833997877.index
