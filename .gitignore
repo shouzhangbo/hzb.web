@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .classpath
 .project
 .settings
@@ -6,3 +7,11 @@ target
 */.project
 */.settings
 */target
+=======
+*.class
+
+# Package Files #
+*.jar
+*.war
+*.ear
+>>>>>>> 06d94e289dcc12d506af5b2f0d1af9ccbf7f5e01
