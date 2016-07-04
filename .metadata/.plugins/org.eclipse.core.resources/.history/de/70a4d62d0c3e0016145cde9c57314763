@@ -1,0 +1,57 @@
+package com.my.test.web;
+
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.sankuai.meituan.waimai.opensdk.exception.ApiOpException;
+import com.sankuai.meituan.waimai.opensdk.exception.ApiSysException;
+import com.sankuai.meituan.waimai.opensdk.factory.APIFactory;
+import com.sankuai.meituan.waimai.opensdk.vo.SystemParam;
+
+@Controller
+public class LoginCtrl {
+
+	@RequestMapping("/login")
+	public String login(HttpServletRequest request,
+            HttpServletResponse response,String userName,String pwd){
+		HttpSession session = request.getSession();
+		session.setAttribute("user", userName+","+pwd);
+		response.addCookie(new Cookie("user",userName+","+pwd));
+		return "main";
+	}
+	@RequestMapping("/login11")
+	@ResponseBody
+	public String test(String originCategoryName,String newCategoryName){
+		SystemParam systemParam = new SystemParam("300","e59324f2e9330ee986051ecb4454c492");
+		try {
+			String result = APIFactory.getFoodAPI().foodCatUpdate(systemParam, "test", originCategoryName, newCategoryName, 1);
+			System.out.println(result);
+		} catch (ApiOpException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ApiSysException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return "aa";
+	}
+	public static void main(String[] args) {
+		SystemParam systemParam = new SystemParam("300","e59324f2e9330ee986051ecb4454c492");
+		try {
+			String result = APIFactory.getPoiAPI().poiGetIds(systemParam);
+			System.out.println(result);
+		} catch (ApiOpException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ApiSysException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}

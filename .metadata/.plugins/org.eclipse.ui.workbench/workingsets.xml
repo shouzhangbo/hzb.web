@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workingSetManager>
+<workingSet editPageId="org.eclipse.ui.resourceWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1463190940567_1" label="testpparent" name="testpparent">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/OnlySpring" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/paypal" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/CommonConfig" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/order" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/testpparent" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/user" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/SpringMyBaties" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/app" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/service" type="4"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.ui.resourceWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1467298366645_2" label="hzb.web" name="hzb.web">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/hzb.web" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/simpleWeb" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/databaseWeb" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/commonUtils" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/databaseService" type="4"/>
+</workingSet>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1462198321992_0" label="Window Working Set" name="Aggregate for window 1462198321990"/>
+</workingSetManager>

@@ -1,0 +1,89 @@
+package com.my.test.ctrl;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.*;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.my.test.manage.TestService;
+import com.my.test.mapper.baseUser;
+import com.my.test.mapper.baseUserMapper;
+import com.my.test.mapper.userInfo;
+import com.my.test.mongodb.TestMongoDb;
+
+@Controller
+public class Test {
+
+	@Autowired
+	TestService testService;
+	
+//	@Autowired
+//	TestMongoDb testMongoDb;
+	
+	@Autowired
+	private baseUserMapper baseMapper;
+	
+	@RequestMapping(value="/test11")
+	@ResponseBody
+	public Map test(){
+		Map map = new HashMap();
+		map.put("user", baseMapper.getAll());
+		return map;
+	}
+	@RequestMapping(value="/test1")
+	@ResponseBody
+	public Map test1(baseUser base,String name,String date){
+		Map map = new HashMap();
+		if(null!=base.getId()){
+			map.put("user", baseMapper.getById(Integer.parseInt(base.getId()+"")));
+		}else if(null!=base.getUserName()){
+			map.put("user", baseMapper.getByName(base.getUserName()));
+		}else if(null!=name){
+			map.put("user", baseMapper.getByVague(name));
+		}else if(null!=date){
+			try {
+				map.put("user", baseMapper.getByDate(new SimpleDateFormat("yyyy-mm-dd HH:mm:ss").parse(date)));
+			} catch (ParseException e) {
+				e.printStackTrace();
+			}
+		}
+		return map;
+	}
+	@RequestMapping(value="/test2")
+	@ResponseBody
+	public String test2(baseUser base,userInfo user){
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		return "ok";
+	}
+	@RequestMapping(value="/test")
+	public void test(baseUser base,userInfo user){
+		testService.test(base,user);
+		System.out.println("aaa");
+	}
+	
+	@RequestMapping(value="/testt")
+	public void testt(){
+		testService.testt();
+	}
+	
+	
+//	@RequestMapping(value="/mogo")
+//	public void mogo(baseUser base){
+//		testMongoDb.save(base);
+//	}
+//	
+//	@RequestMapping(value="/find")
+//	public void find(baseUser base){
+//		List<baseUser> list =testMongoDb.find(base.getUserName());
+//		System.out.println("list="+list.size());
+//	}
+	
+}

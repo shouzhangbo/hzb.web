@@ -1,0 +1,9 @@
+127.0.0.1 - - [06/Jun/2016:22:24:16 +0800] "GET / HTTP/1.1" 404 951
+0:0:0:0:0:0:0:1 - - [06/Jun/2016:22:24:18 +0800] "GET /SpringMyBaties/login.jsp HTTP/1.1" 200 1333
+0:0:0:0:0:0:0:1 - - [06/Jun/2016:22:24:18 +0800] "GET /SpringMyBaties/js/jquery.min.js HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [06/Jun/2016:22:24:18 +0800] "GET /favicon.ico HTTP/1.1" 404 973
+0:0:0:0:0:0:0:1 - - [06/Jun/2016:22:24:26 +0800] "GET /SpringMyBaties/test1.json?id=1 HTTP/1.1" 200 130
+0:0:0:0:0:0:0:1 - - [06/Jun/2016:22:24:33 +0800] "GET /SpringMyBaties/test1.json?name=11 HTTP/1.1" 500 9185
+0:0:0:0:0:0:0:1 - - [06/Jun/2016:22:25:30 +0800] "GET /SpringMyBaties/test1.json?userName=11 HTTP/1.1" 404 949
+0:0:0:0:0:0:0:1 - - [06/Jun/2016:22:26:03 +0800] "GET /SpringMyBaties/test1.json?userName=11 HTTP/1.1" 404 949
+0:0:0:0:0:0:0:1 - - [06/Jun/2016:22:26:05 +0800] "GET /SpringMyBaties/test1.json?userName=11 HTTP/1.1" 404 949
