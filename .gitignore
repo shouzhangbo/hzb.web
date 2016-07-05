@@ -1,17 +1,17 @@
-<<<<<<< HEAD
 .classpath
 .project
 .settings
+.idea
+.metadata
+.recommenders
 target
 */.classpath
 */.project
 */.settings
 */target
-=======
 *.class
-
+*/.iml
 # Package Files #
 *.jar
 *.war
-*.ear
->>>>>>> 06d94e289dcc12d506af5b2f0d1af9ccbf7f5e01
+*.zip

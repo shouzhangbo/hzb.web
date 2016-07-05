@@ -1,0 +1,27 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:amq="http://activemq.apache.org/schema/core"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jms="http://www.springframework.org/schema/jms"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+  http://activemq.apache.org/schema/core http://activemq.apache.org/schema/core/activemq-core.xsd
+  http://www.springframework.org/schema/jms http://www.springframework.org/schema/jms/spring-jms.xsd" default-autowire="byName">
+    <!-- 配置activemq 的连接工厂类 -->
+    <bean id="jmsFactory" class="org.apache.activemq.pool.PooledConnectionFactory" destroy-method="stop">
+        <property name="connectionFactory">
+            <bean class="org.apache.activemq.ActiveMQConnectionFactory">
+                <property name="brokerURL">
+                    <!--  测试环境配置 host   123.57.156.221 mq.saaspos.cn -->
+                    <value>tcp://192.168.1.111:61616</value>
+                </property>
+            </bean>
+        </property>
+    </bean>
+    <!-- 配置队列监听器 注意destination 对应的队列名称  持久化topic 每个监听只有1个并发会话 -->
+    <jms:listener-container container-type="default" connection-factory="jmsFactory"
+                            acknowledge="transacted" concurrency="1">
+        <!-- destination 监听的队列名称 vtc开头+本系统二级域名+订阅消息名结尾  ref为监听处理类  method为监听处理方法  -->
+        <jms:listener destination="test" ref="mqReceiver"
+                      method="onMessage" />
+    </jms:listener-container>
+    <!-- 监听处理类需要实现jms监听接口  implements MessageListener  -->
+    <bean id="mqReceiver" class="com.my.hzb.data.mq.MqReceiver"/>
+</beans>

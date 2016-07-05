@@ -1,0 +1,36 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:amq="http://activemq.apache.org/schema/core"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jms="http://www.springframework.org/schema/jms"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+  http://activemq.apache.org/schema/core http://activemq.apache.org/schema/core/activemq-core.xsd
+  http://www.springframework.org/schema/jms http://www.springframework.org/schema/jms/spring-jms.xsd" default-autowire="byName">
+    <!-- 配置activemq 的连接工厂类 -->
+    <bean id="jmsFactory2" class="org.apache.activemq.pool.PooledConnectionFactory" destroy-method="stop">
+        <property name="connectionFactory">
+            <bean class="org.apache.activemq.ActiveMQConnectionFactory">
+                <property name="brokerURL">
+                    <!--  测试环境配置 host   123.57.156.221 mq.saaspos.cn -->
+                    <value>tcp://192.168.252.128:61616</value>
+                </property>
+            </bean>
+        </property>
+    </bean>
+    <bean id="wdMsgMQ2" class="org.apache.activemq.command.ActiveMQQueue">
+        <constructor-arg index="0" value="test"/>
+    </bean>
+    <!-- 配置发送消息的模板 -->
+    <bean id="jmsTemplate2" class="org.springframework.jms.core.JmsTemplate">
+        <property name="connectionFactory">
+            <ref local="jmsFactory2"/>
+        </property>
+        <!-- 默认发送队列,也可以在发送时临时指定发送队列 -->
+        <property name="defaultDestination" ref="wdMsgMQ2" />
+        <!-- 2 持久 -->
+        <property name="deliveryMode" value="2"/>
+        <!--订阅 发布模式 -->
+        <property name="pubSubDomain" value="false"/>
+    </bean>
+    <!--  发送类  -->
+    <bean id="mqSender2" class="com.my.hzb.mq.MqSender2"/>
+    
+</beans>
