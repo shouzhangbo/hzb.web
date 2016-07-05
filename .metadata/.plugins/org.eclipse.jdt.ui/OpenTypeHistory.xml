@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<typeInfoHistroy>
-<typeInfo handle="=CommonConfig/C:\/Users\/xuanxuan\/.m2\/repository\/org\/mybatis\/mybatis\/3.1.1\/mybatis-3.1.1.jar&lt;org.apache.ibatis.session(Configuration.class[Configuration" modifiers="33" timestamp="1463191823697"/>
-<typeInfo handle="=CommonConfig/C:\/Users\/xuanxuan\/.m2\/repository\/org\/mybatis\/mybatis\/3.1.1\/mybatis-3.1.1.jar&lt;org.apache.ibatis.binding(MapperRegistry.class[MapperRegistry" modifiers="33" timestamp="1463191823697"/>
-<typeInfo handle="=CommonConfig/C:\/Users\/xuanxuan\/.m2\/repository\/org\/mybatis\/mybatis\/3.1.1\/mybatis-3.1.1.jar&lt;org.apache.ibatis.binding(MapperProxy.class[MapperProxy" modifiers="33" timestamp="1463191823697"/>
-<typeInfo handle="=CommonConfig/C:\/Users\/xuanxuan\/.m2\/repository\/org\/mybatis\/mybatis\/3.1.1\/mybatis-3.1.1.jar&lt;org.apache.ibatis.session(SqlSessionFactory.class[SqlSessionFactory" modifiers="1537" timestamp="1463191823697"/>
-<typeInfo handle="=user/C:\/Users\/xuanxuan\/.m2\/repository\/org\/mybatis\/mybatis\/3.2.8\/mybatis-3.2.8.jar&lt;org.apache.ibatis.binding(MapperProxyFactory.class[MapperProxyFactory" modifiers="33" timestamp="1465739833120"/>
-<typeInfo handle="=app/E:\/softinstall\/apache-tomcat-7.0.69\/lib\/tomcat-dbcp.jar&lt;org.apache.tomcat.dbcp.dbcp(DataSourceConnectionFactory.class[DataSourceConnectionFactory" modifiers="33" timestamp="1460343524000"/>
-</typeInfoHistroy>
